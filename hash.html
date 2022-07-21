@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/navfoot.css" />
+  <link rel="stylesheet" href="css/hash.css" />
+  <link rel="icon" href="images/hash.png" />
+  <title>Atharane | Hash Tables</title>
+</head>
+
+<body>
+  <!-- navigation bar -->
+  <nav>
+    <a href="index.html">
+      <img id="logo" src="images/athrane_logo.png" alt="athrane logo" />
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hash.html">Data Structures</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+    </ul>
+  </nav>
+
+  <h2>Hash Table Visualization</h2>
+
+  <div class="super-hash-wrap">
+    <div id="hash-info">
+      <!-- <p>
+        In computing, a hash table (hash map) is a data structure that
+        implements an associative array abstract data type, a structure that
+        can map keys to values. A hash table uses a hash function to compute
+        an index, also called a hash code, into an array of buckets or slots,
+        from which the desired value can be found. During lookup, the key is
+        hashed and the resulting hash indicates where the corresponding value
+        is stored.
+      </p> -->
+
+      <section id="function-wrap">
+        <header>Hash function</header>
+        <p id="function-definition">
+          The index for a specific string will be equal to sum of ASCII values
+          of characters multiplied by their respective order in the string
+          after which it is modulo with size of hash table (prime number)
+
+          <br />
+          <span class="red-text">
+            hash(abcdef) = (971 + 982 + 993 + 1004 + 1015 + 1026) % size of
+            table
+          </span>
+          <br />
+
+          <span class="post-script">
+            * collision resolution: seperate chaining
+          </span>
+        </p>
+      </section>
+
+      <section id="insert-section">
+        <!-- for fuck sake don't wrap the text inputs in form in order to impose 'required' attribute as it WON'T WORK bacause it will cause the page to reload!.
+             Oh, you think that adding onsubmit="return false" would solve the problem eh?. It will just cause the empty string key value pair to render a blank cell so making check for empty string anyway, thus defeating the whole purpose-->
+
+        <input required type="text" autocomplete="off" id="key-input" placeholder="Key" />
+        <input type="text" autocomplete="off" id="value-input" placeholder="Value" />
+
+        <button id="insert-btn">Insert</button>
+        <button id="delete-btn">Delete</button>
+
+      </section>
+
+      <section id="alert-message">
+        <img src="images/error.png" alt="error image" id="error-icon" />
+        <p id="alert-message-content"></p>
+        <img src="images/x-mark.png" alt="cross icon" id="cross-icon" />
+      </section>
+
+      <!-- <img src="snippets/pointers.png" alt="code snippet" /> -->
+    </div>
+
+    <div id="hash-table"></div>
+  </div>
+
+  <!-- Footer: Devloper-info, Newsletter, Socials -->
+  <footer>
+    <div class="footer-widget">
+      <h4>Site Developer</h4>
+      <p>
+        Yup, this site is developed by me. No WordPress, no Wix website
+        builder, not even bootstrap or any other fancy frameworks. Just raw
+        HTML, CSS, and JavaScript. Don't we all love the elementary?
+      </p>
+    </div>
+    <div class="footer-widget">
+      <h4>Newsletter</h4>
+      <p>Stay updated with the latest programming trends</p>
+      <form action="">
+        <input type="email" placeholder="Enter Email Address" />
+        <input type="submit" value="→" />
+      </form>
+    </div>
+
+    <div class="footer-widget">
+      <h4>Follow Me</h4>
+      <p>Let's be social</p>
+      <div class="social-wrapper">
+        <a href="https://www.facebook.com/atharva.rane.3762" target="_blank">
+          <img class="social_icon" src="images/facebook.png" alt="facebook logo" />
+        </a>
+        <a href="https://www.instagram.com/atharva_rane0511/" target="_blank">
+          <img class="social_icon" src="images/instagram.png" alt="instagram logo" />
+        </a>
+        <a href="https://twitter.com/Atharane" target="_blank">
+          <img class="social_icon" src="images/twitter.png" alt="twitter logo" />
+        </a>
+        <a href="https://nasamark.medium.com/" target="_blank">
+          <img class="social_icon" src="images/medium.png" alt="medium logo" />
+        </a>
+        <a href="" target="_blank">
+          <img class="social_icon" src="images/github.png" alt="github logo" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/hash.js"></script>
+</body>
+
+</html>

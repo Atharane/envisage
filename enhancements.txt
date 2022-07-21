@@ -1,0 +1,10 @@
+. Deletion animation
+. Prevent duplicate input
+. Custom navbar
+. Custom footer
+
+
+Atharva
+athArva
+atharvA
+athArav
