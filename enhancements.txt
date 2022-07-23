@@ -1,10 +1,6 @@
-. Deletion animation
+. Use arrow function for deletion animation
+. Disable user input during animation
 . Prevent duplicate input
 . Custom navbar
 . Custom footer
-
-
-Atharva
-athArva
-atharvA
-athArav
+. Add code snippets
