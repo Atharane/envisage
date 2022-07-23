@@ -45,6 +45,14 @@ h2 {
   align-items: center;
 }
 
+#hash-info > #code-snippet{
+  display: block;
+  width: 92%;
+  margin: 0 auto;
+  border-radius: 10px;
+
+}
+
 #hash-info > p {
   display: block;
   max-width: 92%;
@@ -56,6 +64,7 @@ h2 {
 
 #hash-info > img {
     max-width: 94%;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 #function-wrap {
