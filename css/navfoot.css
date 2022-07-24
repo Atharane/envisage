@@ -9,8 +9,10 @@
 }
 
 body {
-  background-color: #f9f9ff;
-  position: relative;
+  background: #f5f5f7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -18,53 +20,56 @@ a {
 }
 
 nav {
-  background-color: #ffffff;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2%;
-  margin: 6px 12px;
+  padding: 1vh 4%;
+  margin: 2vh 1vw;
   border-radius: 6px;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0 20px;
-}
-
-nav li {
-  font-size: 12px;
-  display: inline-block;
-  margin: 20px 20px;
-}
-
-nav a:hover {
-  color: #8490ff;
 }
 
 nav #logo {
   float: left;
   height: 24px;
-  margin: 0px 20px;
+}
+
+nav > #report-bug {
+  display: flex;
+  align-items: center;
+}
+
+#report-bug > p {
+  font-size: 12px;
+  color: inherit;
+}
+
+nav > #report-bug:hover{
+  color: #8490ff;
+}
+
+#bug {
+  height: 14px;
+  margin: 6px;
+  color: inherit;
 }
 
 .social_icon {
   width: 18px;
-  padding: 10px;
+  padding-right: 10px;
 }
 
 .social-wrapper {
-  padding: 4px;
-  position: relative;
-  left: -10px;
+  padding-top: 8px;
 }
 
 footer {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-color: #04091e;
-  margin-top: 20px;
-  padding: 30px 0 20px 0;
+  margin-top: auto;
+  padding: 4vh 4vw;
 }
 
 footer * {
@@ -76,29 +81,29 @@ footer h4 {
   font-weight: 500;
 }
 
+.footer-widget {
+  margin: 10px 0;
+}
+
 footer p {
   color: rgb(119, 119, 119);
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 22.75px;
-  margin: 16px 0;
-
-  max-width: 24vw;
+  font-size: 12px;
+  margin-top: 8px;
+  max-width: 300px;
 }
 
 footer input[type="email"] {
-  padding: 8px;
+  padding: 4px 8px;
+  margin-top: 8px;
   border: none;
   background-color: #f9f9ff;
-  width: 240px;
+  width: 60vw;
+  max-width: 220px;
   color: #222;
 }
 
 footer input[type="submit"] {
-  font-size: 24px;
-  padding: 0 14px;
+  padding: 4px 12px;
   background-color: #8490ff;
-  color: #f9f9ff;
   border: none;
-  width: fit-content;
 }

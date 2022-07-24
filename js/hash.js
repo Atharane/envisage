@@ -3,6 +3,7 @@ const deleteButton = document.getElementById("delete-btn");
 const messageEl = document.getElementById("alert-message");
 const crossIcon = document.getElementById("cross-icon");
 const size = 7; // size of hash table, preferably prime
+const animationInterval = 400; // milliseconds
 
 let hashTable = [];
 
@@ -69,12 +70,12 @@ function renderCells(row_index) {
   }
 }
 
+// hash(abcdef) = (97*1 + 98*2 + 99*3 + 100*4 + 101*5 + 102*6) % size
 function hash(key) {
   let sum = 0;
   let index = 1;
 
   for (let i = 0; i < key.length; i++) {
-    // ASCII * 10 + index
     sum += key.charCodeAt(i) * index;
     index++;
   }
@@ -118,6 +119,10 @@ insertButton.addEventListener("click", () => {
     return;
   }
 
+  // prevent user interaction during animation
+  deleteButton.disabled = true
+  insertButton.disabled = true
+
   let index = hash(key_el.value);
   hashTable[index].unshift({ key: key_el.value, value: value_el.value });
 
@@ -127,9 +132,12 @@ insertButton.addEventListener("click", () => {
   setTimeout(() => {
     removeBorder(index_el)();
     renderCells(index);
+    // allow user interaction after animation is complete
+    deleteButton.disabled = false
+    insertButton.disabled = false
     key_el.value = "";
     value_el.value = "";
-  }, 600);
+  }, animationInterval);
 });
 
 deleteButton.addEventListener("click", () => {
@@ -152,7 +160,9 @@ deleteButton.addEventListener("click", () => {
     return;
   }
 
-  let animationInterval = 400; // milliseconds
+  // prevent user interaction during animation
+  deleteButton.disabled = true
+  insertButton.disabled = true
 
   for (var i = 0; i < cells.length; i++) {
     var child = cells[i];
@@ -166,7 +176,6 @@ deleteButton.addEventListener("click", () => {
         renderCells(index);
         key_el.value = "";
       }, (i + 1) * animationInterval);
-
       break;
     }
 
@@ -176,6 +185,12 @@ deleteButton.addEventListener("click", () => {
       setTimeout(()=>{showErrorMessage("Key not found")}, (i + 1) * animationInterval);
     }
   }
+
+  // allow user interaction after animation is complete
+  setTimeout(() => {
+    deleteButton.disabled = false
+    insertButton.disabled = false
+  }, (i + 1) * animationInterval);
 });
 
 renderRows(size);
