@@ -48,8 +48,8 @@ nav > #report-bug:hover{
   color: #8490ff;
 }
 
-#bug {
-  height: 14px;
+#report-bug > i {
+  font-size: 11px;
   margin: 6px;
   color: inherit;
 }
