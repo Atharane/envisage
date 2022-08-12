@@ -1,6 +1,4 @@
 . Use arrow function for deletion animation
 . Disable user input during animation
 . Prevent duplicate input
-. Custom navbar
-. Custom footer
 . Add code snippets
