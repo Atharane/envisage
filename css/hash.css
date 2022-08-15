@@ -151,6 +151,10 @@ button{
 
 }
 
+.row-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
 .row {
   display: flex;
 }
